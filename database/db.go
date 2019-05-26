@@ -29,7 +29,7 @@ func InitDb(uri string) (*database, error) {
 		`CREATE TABLE IF NOT EXISTS events (
 			id int(11) unsigned NOT NULL AUTO_INCREMENT,
 			event_name varchar(128) DEFAULT NULL,
-			address varchar(128) DEFAULT NULL,
+			venue varchar(128) DEFAULT NULL,
 			handphone varchar(13) DEFAULT NULL,
 			bank_number varchar(64) DEFAULT NULL,
 			id_user int(11) unsigned NOT NULL,
