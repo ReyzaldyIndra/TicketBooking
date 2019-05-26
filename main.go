@@ -5,12 +5,10 @@ import (
 	"fmt"
 	"log"
 	"net/http"
-)
+	v1 "ticket/v1"
 
-type Ticket struct {
-	Name  string
-	Price int
-}
+	"github.com/gorilla/mux"
+)
 
 func WrapAPIData(w http.ResponseWriter, r *http.Request, data interface{}, code int, message string) {
 	w.Header().Set("Content-Type", "application/json")
@@ -41,5 +39,8 @@ func handleRequest() {
 
 func main() {
 	handleRequest()
+	api := &v1.InDB{DB: conn.GetDB()}
+	router := mux.NewRouter()
+	router.HandleFunc("api/v1/product/book", api.BookTicket)
 
 }

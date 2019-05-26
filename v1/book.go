@@ -6,3 +6,7 @@ type Book struct {
 	KelasTiket  string `json:"kelasTiket"`
 	LokasiTiket string `json:"lokasiTiket"`
 }
+
+func BookTicket(db *InDB) {
+
+}
